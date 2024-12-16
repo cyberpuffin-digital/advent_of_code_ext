@@ -1,0 +1,17 @@
+Now, apart from the three equations that could be made true using only addition and multiplication, the above example has three more equations that can be made true by inserting operators:
+
+    156: 15 6 can be made true through a single concatenation: 15 || 6 = 156.
+    7290: 6 8 6 15 can be made true using 6 * 8 || 6 * 15.
+    192: 17 8 14 can be made true using 17 || 8 + 14.
+
+Adding up all six test values (the three that could be made before using only + and * plus the new three that can now be made by also using ||) produces the new total calibration result of 11387.
+
+
+"example.in" valid operations tally up to 11387.
+
+	"example.in" took 4.652641ms to finish.
+
+"input.txt" valid operations tally up to 254136560217241.
+
+	"input.txt" took 46m19.58725348s to finish.
+

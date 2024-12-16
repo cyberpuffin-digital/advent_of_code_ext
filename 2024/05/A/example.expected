@@ -1,0 +1,17 @@
+Because the first update does not include some page numbers, the ordering rules involving those missing page numbers are ignored.
+
+The second and third updates are also in the correct order according to the rules. Like the first update, they also do not include every page number, and so only some of the ordering rules apply - within each update, the ordering rules that involve missing page numbers are not used.
+
+The fourth update, 75,97,47,61,53, is not in the correct order: it would print 75 before 97, which violates the rule 97|75.
+
+The fifth update, 61,13,29, is also not in the correct order, since it breaks the rule 29|13.
+
+The last update, 97,13,75,29,47, is not in the correct order due to breaking several rules.
+
+For some reason, the Elves also need to know the middle page number of each update being printed. Because you are currently only printing the correctly-ordered updates, you will need to find the middle page number of each correctly-ordered update. In the above example, the correctly-ordered updates are:
+
+75,47,61,53,29
+97,61,53,29,13
+75,29,13
+
+These have middle page numbers of 61, 53, and 29 respectively. Adding these page numbers together gives 143.

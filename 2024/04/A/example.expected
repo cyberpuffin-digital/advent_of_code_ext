@@ -1,0 +1,101 @@
+In this word search, XMAS occurs a total of 18 times; here's the same word search again, but where letters not involved in any XMAS have been replaced with .:
+
+// Check forward at beginning
+// Check forward at end
+// Check reverse at beginning
+// Check reverse at end
+// Check down at beginning
+// Check down at end
+// Check up at beginning
+// Check up at end
+// Check forward-down at beginning
+// Check forward-down at end
+// Check forward-up at beginning
+// Check forward-up at end
+// Check reverse-down at beginning
+// Check reverse-down at end
+// Check reverse-up at beginning
+// Check reverse-up at end
+
+original example:
+
+MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX
+
+  0 1 2 3 4 5 6 7 8 9
+0 . . . . X X M A S . 0 - 2
+1 . S A M X M S . . . 1 - 1
+2 . . . S . . A . . . 2 - 0
+3 . . A . A . M S . X 3 - 2
+4 X M A S A M X . M M 4 - 3
+5 X . . . . . X A . A 5 - 2
+6 S . S . S . S . S S 6 - 0
+7 . A . A . A . A . A 7 - 0
+8 . . M . M . M . M M 8 - 0
+9 . X . X . X M A S X 9 - 8
+  0 1 2 3 4 5 6 7 8 9
+
+More examples
+
+XMASXXMASS
+MMSAXMXAMA
+ASAMAXAASM
+SXASAXSSMX
+XMASAMXSMX
+SAMXAXXMAS
+SASXSASXMX
+AAMAMAXAMA
+MAMXMAMAMM
+XXMXSXSAMX
+
+  0 1 2 3 4 5 6 7 8 9
+0 X M A S X X M A S S 0 - 5 -> 5
+1 M M . . . M . . . A 1 - 0 -> 5
+2 A . A . . . A . . M 2 - 0 -> 5
+3 S . . S . . . S . X 3 - 1 -> 6
+4 X M A S A M X . . . 4 - 2 -> 8
+5 S A M X . . X M A S 5 - 2 -> 10
+6 S A S X S . S . . X 6 - 2 -> 12
+7 A A M A M A . A M A 7 - 0 -> 12
+8 M . M X M A . S M M 8 - 1 -> 13
+9 X X . X . X S A M X 9 - 7 -> 20
+  0 1 2 3 4 5 6 7 8 9
+
+
+// Check forward at beginning
+    0, 0
+// Check forward at end
+    5, 6
+// Check reverse at beginning
+    5, 3
+// Check reverse at end
+    9, 9
+// Check down at beginning
+    0, 0
+// Check down at end
+    6, 3
+// Check up at beginning
+    3, 9
+// Check up at end
+// Check forward-down at beginning
+    0, 0
+// Check forward-down at end
+    6, 3
+// Check forward-up at beginning
+// Check forward-up at end
+    9, 3
+// Check reverse-down at beginning
+// Check reverse-down at end
+    6, 9
+// Check reverse-up at beginning
+    8, 3
+// Check reverse-up at end
+    9, 9

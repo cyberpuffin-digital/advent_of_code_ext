@@ -1,0 +1,17 @@
+This time, the sum of the results is 48 (2*4 + 8*5).
+48 + 48 + (8*64 + 12*82) == 1592
+
+---
+
+xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))don't()ljew
+
+mul(2,4) - don't() - mul(5,5) - mul(11,8) - do() - mul(8,5) - don't()
+2*4 + 8*5 = 48 - disabled
+
+---
+
+xmul(2,4)&mul[3,7]!^do()_mul(5,5)+mul(32,64](mul(11,8)undon't()?mul(8,5))!$_&^!)do()-mul(8,64)+08!%.>_mul(12,82)
+
+mul(2,4) - do() - mul(5,5) - mul(11,8) - don't() - mul(8,5) - do() - mul(8,64) - mul(12,82)
+
+48 + 5*5 + 11*8 + 8*64 + 12*82 = 1657 - enabled

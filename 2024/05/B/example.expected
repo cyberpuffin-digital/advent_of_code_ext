@@ -1,0 +1,6 @@
+- 75,97,47,61,53 becomes 97,75,47,61,53.
+- 61,13,29 becomes 61,29,13.
+- 97,13,75,29,47 becomes 97,75,47,29,13.
+
+After taking only the incorrectly-ordered updates and ordering them correctly, their middle page numbers are 47, 29, and 47.
+Adding these together produces 123.
