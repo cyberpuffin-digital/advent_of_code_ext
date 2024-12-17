@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 	"math"
-	"slices"
 	"strconv"
 	"strings"
 	"sync"
+	"time"
 )
 
 type Equation struct {
@@ -27,7 +27,6 @@ func (e *Equation) calculateMasks() (masks []string) {
 
 	// create a "zero" mask
 	mask = []rune(strings.Repeat(fmt.Sprintf("%c", validOperators[0]), len(e.testValues)-1))
-	masks = append(masks, string(mask))
 
 	// Calculate the number of possible combinations
 	combinations := math.Pow(float64(len(validOperators)), float64(len(mask)))
@@ -83,9 +82,7 @@ func (e *Equation) calculateMasks() (masks []string) {
 		for _, o := range mask {
 			maskString += fmt.Sprintf("%c", o)
 		}
-		if !slices.Contains(masks, maskString) {
-			masks = append(masks, maskString)
-		}
+		masks = append(masks, maskString)
 	}
 
 	e.mutex.Lock()
@@ -105,6 +102,9 @@ func (e *Equation) checkMasks(masks []string) {
 		tally = e.testValues[0]
 
 		for operIndex := 0; operIndex < len(mask); operIndex++ {
+			if tally > e.totalValue {
+				continue
+			}
 			switch mask[operIndex] {
 			case '+':
 				tally += e.testValues[operIndex+1]
@@ -137,9 +137,16 @@ func (e *Equation) checkMasks(masks []string) {
 // checkValidity will scan the testValues to see if any combination of operands
 // can create the totalValue
 func (e *Equation) checkValidity(wg *sync.WaitGroup, mutex *sync.Mutex) {
+	funcTime := time.Now()
+
 	e.mutex = mutex
 	masks := e.calculateMasks()
+	maskCalcTime := time.Since(funcTime)
+	funcTime = time.Now()
 	e.checkMasks(masks)
+	maskCheckTime := time.Since(funcTime)
+	verbosef("Calculate Masks took %s.\n", maskCalcTime)
+	verbosef("Check Masks took %s.\n", maskCheckTime)
 	wg.Done()
 }
 

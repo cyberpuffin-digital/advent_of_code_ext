@@ -6,6 +6,7 @@ import (
 )
 
 func parseCLI() {
+	flag.StringVar(&cpuProfile, "cpuprofile", "", "write cpu profile to file.")
 	flag.BoolVar(&example, "example", false, "Only run on example input.")
 	flag.BoolVar(&verbose, "verbose", false, "Increase program output.")
 	flag.Parse()
